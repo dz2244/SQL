@@ -26,6 +26,7 @@ public class HelperDB extends SQLiteOpenHelper
         strCreate+=");";
         db.execSQL(strCreate);
 
+
         strCreate="CREATE TABLE "+ParkFood.TABLE_PARKFOOD;
         strCreate+=" ("+ParkFood.KEY_ID+" INTEGER PRIMARY KEY,";
         strCreate+=" "+ParkFood.NAME_COMPANY+" TEXT,";
