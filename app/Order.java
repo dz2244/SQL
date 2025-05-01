@@ -1,5 +1,6 @@
 public class Order {
     public static final String KEY_ID = "_id";
+    public static final String TABLE_ORDER= "Worker";
     public static final String DATE = "Date";
     public static final String TIME = "Time";
     public static final String EMPLOYEE = "Employee";
