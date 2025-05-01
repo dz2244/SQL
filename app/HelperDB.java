@@ -6,7 +6,7 @@ public class HelperDB extends SQLiteOpenHelper
 {
     private static final String DATABASE_NAME = "dbexam.db";
     private static final int DATABASE_VERSION = 1;
-    String strCreate = "CARD NUMBER "+CARD_NUMBER, strDelete;
+    String strCreate, strDelete;
 
     public HelperDB (Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -17,12 +17,12 @@ public class HelperDB extends SQLiteOpenHelper
     {
         strCreate = "CREATE TABLE " + Worker.TABLE_WORKER;
         strCreate+=" ("+Worker.KEY_ID+" INTEGER PRIMARY KEY,";
-        strCreate+=" "+Worker.NAME+" TEXT,";
-        strCreate+=" "+Worker.THE_COMPANY_HE_WORKS_FOR+" TEXT,";
+        strCreate+=" "+Worker.FIRST_NAME+" TEXT,";
+        strCreate+=" "+Worker.COMPANY+" TEXT,";
         strCreate+=" "+Worker.LAST_NAME+" TEXT,";
         strCreate+=" "+Worker.PHONE_NUMBER+" INTEGER";
         strCreate+=" "+Worker.ID+" INTEGER";
-        strCreate+=" "+Worker.CARD_NUMBER+" INTEGER";
+        strCreate+=" "+Worker.CARD+" INTEGER";
         strCreate+=");";
         db.execSQL(strCreate);
 
