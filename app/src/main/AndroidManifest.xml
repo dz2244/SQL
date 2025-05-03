@@ -13,6 +13,15 @@
         android:theme="@style/Theme.SQL"
         tools:targetApi="31">
         <activity
+            android:name=".MealA"
+            android:exported="false" />
+        <activity
+            android:name=".ParkFoodA"
+            android:exported="false" />
+        <activity
+            android:name=".OrderA"
+            android:exported="false" />
+        <activity
             android:name=".WorkerA"
             android:exported="false" />
         <activity
