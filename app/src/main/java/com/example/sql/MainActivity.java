@@ -4,27 +4,24 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     SQLiteDatabase db ;
     HelperDB hlp ;
     TextView tV ;
-
-    Button workerBtn ;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        workerBtn = findViewById(R.id.workerBtn);
         tV = findViewById(R.id.tV);
 
-        tV.setText("To insert something into the tables, select one of the tables.");
+        tV.setText("All of the buttons in the option menu.");
         hlp = new HelperDB(this);
         db = hlp.getWritableDatabase();
         db.close();
@@ -38,30 +35,33 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * create the options menu
+     * Inflates the options menu.
      *
-     * @param menu The options menu
-     * @return return true
+     * @param menu the options menu.
+     * @return true if the menu is successfully created.
      */
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
-        return super.onCreateOptionsMenu(menu);
+        return true;
     }
 
     /**
-     * Checks the selection in the options menu
+     * Handles selection of menu items.
      *
-     * @param menu The selected menu item.
-     * @return return true
+     * @param item the selected menu item.
+     * @return true if the item is successfully handled.
      */
-    public boolean onOptionsItemSelected(MenuItem menu) {
-        String num1 = menu.getTitle().toString();
-        if (num1.equals("credits"))
-        {
-            Intent si = new Intent(this,credits_menu.class);
+    @Override
+    public boolean onOptionsItemSelected(@Nullable MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.credits) {
+            Intent si = new Intent(this, credits.class);
             startActivity(si);
         }
-        return super.onOptionsItemSelected(menu);
+
+        return true;
     }
 
 }
