@@ -6,7 +6,7 @@ import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,20 +14,18 @@ public class MainActivity extends AppCompatActivity {
 
     SQLiteDatabase db ;
     HelperDB hlp ;
-    TextView tV ;
+    Button tableBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        tV = findViewById(R.id.tV);
-
-        tV.setText("All of the buttons in the option menu.");
+        tableBtn = findViewById(R.id.tableBtn);
         hlp = new HelperDB(this);
         db = hlp.getWritableDatabase();
         db.close();
     }
 
-    public void show(View view)
+    public void ClickedTableBtn(View view)
     {
         Intent si = new Intent(this, Display.class);
         startActivity(si);
@@ -56,8 +54,28 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@Nullable MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.credits) {
-            Intent si = new Intent(this, credits.class);
+        if (id == R.id.Credits) {
+            Intent si = new Intent(this, CreditsA.class);
+            startActivity(si);
+        }
+        if (id == R.id.Main) {
+            Intent si = new Intent(this, MainActivity.class);
+            startActivity(si);
+        }
+        if (id == R.id.WorkerA) {
+            Intent si = new Intent(this, WorkerA.class);
+            startActivity(si);
+        }
+        if (id == R.id.OrderA) {
+            Intent si = new Intent(this, OrderA.class);
+            startActivity(si);
+        }
+        if (id == R.id.MealA) {
+            Intent si = new Intent(this, MealA.class);
+            startActivity(si);
+        }
+        if (id == R.id.ParkFoodA) {
+            Intent si = new Intent(this, ParkFoodA.class);
             startActivity(si);
         }
 
