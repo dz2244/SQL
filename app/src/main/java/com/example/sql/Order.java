@@ -1,5 +1,4 @@
 package com.example.sql;
-
 public class Order {
     public static final String KEY_ID= "_id";
     public static final String TABLE_ORDER= "Orders";
