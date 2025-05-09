@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * Activity for managing Worker data.
  * Allows inserting new worker records into the database.
  */
-public class workerA extends AppCompatActivity {
+public class WorkerA extends AppCompatActivity {
 
     EditText etCard, etName, etLastName, etPhone, etId, etCompany;
     Button btnInsert;
@@ -109,8 +109,28 @@ public class workerA extends AppCompatActivity {
      */
     public boolean onOptionsItemSelected(MenuItem menu) {
         String num1 = menu.getTitle().toString();
-        if (num1.equals("credits")) {
+        if (num1.equals("Credits")) {
             Intent si = new Intent(this, CreditsA.class);
+            startActivity(si);
+        }
+        if (num1.equals("Main")) {
+            Intent si = new Intent(this, MainActivity.class);
+            startActivity(si);
+        }
+        if (num1.equals("WorkerA")) {
+            Intent si = new Intent(this,WorkerA.class);
+            startActivity(si);
+        }
+        if (num1.equals("OrderA")) {
+            Intent si = new Intent(this, OrderA.class);
+            startActivity(si);
+        }
+        if (num1.equals("ParkFoodA")) {
+            Intent si = new Intent(this, ParkFoodA.class);
+            startActivity(si);
+        }
+        if (num1.equals("MealA")) {
+            Intent si = new Intent(this, MealA.class);
             startActivity(si);
         }
         return super.onOptionsItemSelected(menu);

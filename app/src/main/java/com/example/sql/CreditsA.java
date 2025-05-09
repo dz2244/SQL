@@ -1,4 +1,5 @@
 package com.example.sql;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,11 +17,32 @@ public class CreditsA extends AppCompatActivity {
         return true;
     }
     @Override
-    public boolean onOptionsItemSelected(@Nullable MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.Main) {
-            finish();
+    public boolean onOptionsItemSelected(MenuItem menu) {
+        String num1 = menu.getTitle().toString();
+        if (num1.equals("Credits")) {
+            Intent si = new Intent(this, CreditsA.class);
+            startActivity(si);
         }
-        return true;
+        if (num1.equals("Main")) {
+            Intent si = new Intent(this, MainActivity.class);
+            startActivity(si);
+        }
+        if (num1.equals("WorkerA")) {
+            Intent si = new Intent(this,WorkerA.class);
+            startActivity(si);
+        }
+        if (num1.equals("OrderA")) {
+            Intent si = new Intent(this, OrderA.class);
+            startActivity(si);
+        }
+        if (num1.equals("ParkFoodA")) {
+            Intent si = new Intent(this, ParkFoodA.class);
+            startActivity(si);
+        }
+        if (num1.equals("MealA")) {
+            Intent si = new Intent(this, MealA.class);
+            startActivity(si);
+        }
+        return super.onOptionsItemSelected(menu);
     }
 }
