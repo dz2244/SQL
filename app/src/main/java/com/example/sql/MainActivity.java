@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void ClickedTableBtn(View view)
     {
-        Intent si = new Intent(this, Display.class);
+        Intent si = new Intent(this, DisplayA.class);
         startActivity(si);
 
     }
