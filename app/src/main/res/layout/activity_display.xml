@@ -61,7 +61,7 @@
         android:layout_marginStart="212dp"
         android:text="To delete, long press or tap the list item."
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/rtn_back"
+        app:layout_constraintEnd_toStartOf="@+id/btn_back"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

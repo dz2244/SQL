@@ -56,13 +56,8 @@ public class DisplayA extends AppCompatActivity implements AdapterView.OnItemSel
         lvrecords.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         lvrecords.setOnItemLongClickListener(this);
 
-
         ArrayAdapter<String> adp = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, names);
         menu.setAdapter(adp);
-
-
-
-
     }
 
     /**
